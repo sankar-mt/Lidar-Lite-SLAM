@@ -1,4 +1,4 @@
-# Tiny-SLAM Turtle (Python)
+# Tiny-SLAM Turtle / Lidar-Lite-SLAM (Python)
 
 ## What it does
 - Simulates a simple differential-drive robot in **PyBullet**
