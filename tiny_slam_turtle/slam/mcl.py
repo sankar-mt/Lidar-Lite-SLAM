@@ -37,6 +37,7 @@ class ParticleFilter:
         s = np.sum(new_w) + eps
         self.w = new_w / s
 
+    
     def resample(self):
         # Robust low-variance/systematic resampling using searchsorted.
         n = self.n

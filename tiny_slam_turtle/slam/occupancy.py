@@ -2,10 +2,7 @@ import numpy as np
 import math
 
 class OccupancyGrid:
-    def __init__(self, size_m=8.0, resolution=0.05,
-                 lo_occ=0.6,      # was 0.85
-                 lo_free=-0.1,    # was -0.4
-                 lo_min=-3.0, lo_max=3.0):  # narrower range
+    def __init__(self, size_m=8.0, resolution=0.05, lo_occ=0.6, lo_free=-0.1, lo_min=-3.0, lo_max=3.0):
         self.size_m = float(size_m); self.res = float(resolution)
         self.n = int(self.size_m / self.res)
         self.grid = np.zeros((self.n, self.n), dtype=np.float32)

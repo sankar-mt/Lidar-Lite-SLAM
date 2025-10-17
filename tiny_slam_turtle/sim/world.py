@@ -57,3 +57,30 @@ class SimpleWorld:
             hit = r[2]
             dists.append(hit * self.max_range if hit < 1.0 else self.max_range)
         return np.array(dists, dtype=np.float32)
+
+
+    def create_robot(self, radius=0.17, z=0.08):
+        """Spawn a simple cylinder to visualize the robot."""
+        col = p.createCollisionShape(p.GEOM_CYLINDER, radius=radius, height=0.12)
+        vis = p.createVisualShape(p.GEOM_CYLINDER, radius=radius, length=0.12, rgbaColor=[0, 0, 1, 1])
+        self.robot_id = p.createMultiBody(
+            baseMass=1.0,
+            baseCollisionShapeIndex=col,
+            baseVisualShapeIndex=vis,
+            basePosition=[0, 0, z],
+        )
+        return self.robot_id
+
+    def set_robot_pose(self, x, y, theta, z=0.08):
+        """Teleport the visual robot to match the kinematic pose."""
+        orn = p.getQuaternionFromEuler([0, 0, theta])
+        p.resetBasePositionAndOrientation(getattr(self, 'robot_id', -1), [x, y, z], orn)
+
+    def show_rays(self, pose, angles, ranges, z=0.08):
+        """Draw LiDAR rays in the GUI (short lifetime)."""
+        x, y, th = pose
+        for a, d in zip(angles, ranges):
+            ex = x + d * math.cos(th + a)
+            ey = y + d * math.sin(th + a)
+            p.addUserDebugLine([x, y, z], [ex, ey, z], [1, 0, 0], lifeTime=0.1, lineWidth=1)
+    

@@ -3,3 +3,5 @@ matplotlib
 pybullet
 opencv-python
 opencv-contrib-python
+imageio
+imageio-ffmpeg
