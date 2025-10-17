@@ -1,7 +1,5 @@
 # Tiny-SLAM Turtle (Python)
 
-A from-scratch, laptop-friendly robotics project demonstrating **mapping**, **localization**, and **perception** in simulation ; no ROS required.
-
 ## What it does
 - Simulates a simple differential-drive robot in **PyBullet**
 - Builds an **occupancy-grid map** from a LiDAR-like ray sensor
@@ -10,8 +8,6 @@ A from-scratch, laptop-friendly robotics project demonstrating **mapping**, **lo
 - **A*** path planning over the occupancy grid
 - **recording** of frames and auto MP4 if `imageio-ffmpeg` is available
 - Visualizes map + particles live in **Matplotlib**
-
-> This project is intentionally original and **not derived from any coursework**.
 
 ## Quick Start
 ```bash
@@ -37,9 +33,6 @@ imageio                # for saving frames/videos
 imageio-ffmpeg         # (optional) write MP4 automatically
 ```
 
-
-## Project Name
-**Tiny‑SLAM Turtle** — a compact end-to-end SLAM demo (mapping + MCL + A*).
 
 ## See the robot move in 3D (PyBullet)
 ```bash
