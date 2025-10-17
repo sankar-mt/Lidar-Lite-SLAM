@@ -8,6 +8,9 @@ What This Project Does?
 The goal is to replicate the behavior of an autonomous ground robot exploring an unknown space, similar to a TurtleBot or warehouse robot.
 The robot doesn’t know the environment in advance. It starts with a blank map and gradually builds an understanding of the world around it using LiDAR.
 
+![plot](/pybullet.png)
+![plot](/plot.png)
+
 Here’s what happens:
 
 - The robot drives around the environment using simple differential drive motion.
